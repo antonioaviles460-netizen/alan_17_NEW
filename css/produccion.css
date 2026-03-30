@@ -1,0 +1,778 @@
+﻿/* ============================================
+   SECCIN DE PRODUCCIN MUSICAL - RESPONSIVE
+   ============================================ */
+
+/* Contenedor principal de produccin */
+#produccion {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    padding: 40px 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ttulo de la seccin */
+#produccion .title {
+    text-align: center;
+    margin-block-end: 40px;
+    color: #fff;
+    font-size: 2.2rem;
+    position: relative;
+    z-index: 2;
+}
+
+#produccion .title::after {
+    content: '';
+    display: block;
+    inline-size: 80px;
+    block-size: 3px;
+    background: linear-gradient(90deg, #4fc3f7, #2962ff);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+/* Introduccin */
+.produccion-intro {
+    text-align: center;
+    max-inline-size: 800px;
+    margin: 0 auto 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.intro-text {
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding: 0 10px;
+}
+
+/* Grid de servicios - RESPONSIVE */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-block-end: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Tarjetas de servicio */
+.servicio-card {
+    background: rgba(20, 20, 20, 0.8);
+    border-radius: 15px;
+    padding: 25px;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.servicio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(79, 195, 247, 0.15);
+    border-color: rgba(79, 195, 247, 0.4);
+}
+
+/* Servicio popular */
+.servicio-card.popular {
+    border: 2px solid #4fc3f7;
+    position: relative;
+    z-index: 3;
+}
+
+/* Badge para servicios populares */
+.servicio-badge {
+    position: absolute;
+    inset-block-start: -15px;
+    inset-inline-start: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #4fc3f7, #2962ff);
+    color: white;
+    padding: 8px 25px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 4;
+    box-shadow: 0 5px 15px rgba(79, 195, 247, 0.3);
+    white-space: nowrap;
+}
+
+/* Encabezado del servicio */
+.servicio-header {
+    text-align: center;
+    margin-block-end: 20px;
+    padding-block-end: 20px;
+    border-block-end: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.servicio-icon {
+    font-size: 2.5rem;
+    margin-block-end: 15px;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.servicio-header h3 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-block-end: 10px;
+    font-weight: 600;
+}
+
+.servicio-precio {
+    color: #4fc3f7;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 10px 0;
+    text-shadow: 0 0 10px rgba(79, 195, 247, 0.3);
+}
+
+/* Lista de caractersticas */
+.servicio-lista {
+    list-style: none;
+    padding: 0;
+    margin-block-end: 25px;
+}
+
+.servicio-lista li {
+    color: #ddd;
+    margin-block-end: 12px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+    padding-inline-start: 5px;
+}
+
+.servicio-lista li::before {
+    content: "?";
+    color: #4fc3f7;
+    font-weight: bold;
+    margin-inline-end: 12px;
+    font-size: 1.1rem;
+    min-inline-size: 20px;
+}
+
+/* Ahorro en servicios */
+.servicio-ahorro {
+    color: #4caf50;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-block-start: 8px;
+    text-align: center;
+    background: rgba(76, 175, 80, 0.1);
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* Botones de servicio */
+.btn-servicio {
+    inline-size: 100%;
+    background: linear-gradient(135deg, #4fc3f7, #2962ff);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-block-start: 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-servicio::before {
+    content: '';
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: -100%;
+    inline-size: 100%;
+    block-size: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn-servicio:hover::before {
+    inset-inline-start: 100%;
+}
+
+.btn-servicio:hover {
+    background: linear-gradient(135deg, #2962ff, #4fc3f7);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(79, 195, 247, 0.4);
+}
+
+.btn-servicio:active {
+    transform: scale(0.98);
+}
+
+/* Paquetes de promocin */
+.paquetes-container {
+    margin-block-start: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.paquetes-container .subtitle {
+    text-align: center;
+    margin-block-end: 30px;
+    color: #fff;
+    font-size: 1.8rem;
+    position: relative;
+}
+
+.paquetes-container .subtitle::after {
+    content: '';
+    display: block;
+    inline-size: 60px;
+    block-size: 3px;
+    background: linear-gradient(90deg, #4fc3f7, #2962ff);
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+/* Seccin de plazos */
+.plazos-container {
+    margin-block-start: 50px;
+    padding: 25px 20px;
+    background: rgba(30, 30, 30, 0.7);
+    border-radius: 15px;
+    border: 1px solid rgba(79, 195, 247, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.plazos-container .subtitle {
+    text-align: center;
+    margin-block-end: 25px;
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.plazos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-block-start: 25px;
+}
+
+.plazo-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.plazo-item:hover {
+    border-color: rgba(79, 195, 247, 0.3);
+    transform: translateY(-5px);
+}
+
+.plazo-icon {
+    font-size: 2.5rem;
+    margin-block-end: 15px;
+}
+
+.plazo-item h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-block-end: 10px;
+}
+
+.plazo-item p {
+    color: #4fc3f7;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Proceso de trabajo - RESPONSIVE */
+.proceso-trabajo {
+    margin-block-start: 60px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(20, 20, 20, 0.9));
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.proceso-trabajo h3 {
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+    margin-block-end: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.proceso-trabajo h3::after {
+    content: '';
+    display: block;
+    inline-size: 80px;
+    block-size: 3px;
+    background: linear-gradient(90deg, #4fc3f7, #2962ff);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+.proceso-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Lnea conectadora entre pasos */
+.proceso-steps::before {
+    content: '';
+    position: absolute;
+    inset-block-start: 40px;
+    inset-inline-start: 50%;
+    transform: translateX(-50%);
+    inline-size: 3px;
+    block-size: calc(100% - 80px);
+    background: linear-gradient(to bottom, #4fc3f7, #2962ff);
+    z-index: 1;
+}
+
+.step {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px 25px 25px 80px;
+    border-radius: 15px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    border-color: rgba(79, 195, 247, 0.3);
+    box-shadow: 0 10px 25px rgba(79, 195, 247, 0.15);
+}
+
+
+
+.step h4 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-block-end: 10px;
+    font-weight: 600;
+}
+
+.step p {
+    color: #ddd;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Para tablet */
+@media (min-width: 768px) {
+    .proceso-trabajo {
+        padding: 50px 40px;
+    }
+    
+    .proceso-steps {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+    }
+    
+    .proceso-steps::before {
+        display: none; /* Ocultar lnea en desktop */
+    }
+    
+    .step {
+        padding: 25px 20px;
+        text-align: center;
+        min-block-size: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .step::before {
+        position: relative;
+        inset-inline-start: auto;
+        inset-block-start: auto;
+        transform: none;
+        margin: 0 auto 20px;
+        inline-size: 60px;
+        block-size: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .step h4 {
+        font-size: 1.2rem;
+        margin-block-end: 15px;
+    }
+    
+    .step p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Para desktop */
+@media (min-width: 1024px) {
+    .proceso-trabajo h3 {
+        font-size: 2.5rem;
+    }
+    
+    .step {
+        padding: 30px 25px;
+        min-block-size: 240px;
+    }
+    
+    .step:hover {
+        transform: translateY(-8px);
+    }
+}
+
+/* Para mviles muy pequeos */
+@media (max-width: 374px) {
+    .step {
+        padding: 20px 20px 20px 70px;
+    }
+    
+    .step::before {
+        inline-size: 40px;
+        block-size: 40px;
+        font-size: 1.1rem;
+        inset-inline-start: 15px;
+    }
+    
+    .step h4 {
+        font-size: 1.1rem;
+    }
+    
+    .step p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animacin para los pasos */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.step {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+.step:nth-child(1) { animation-delay: 0.1s; }
+.step:nth-child(2) { animation-delay: 0.2s; }
+.step:nth-child(3) { animation-delay: 0.3s; }
+.step:nth-child(4) { animation-delay: 0.4s; }
+.step:nth-child(5) { animation-delay: 0.5s; }
+
+/* Contacto servicios */
+.contacto-servicios {
+    margin-block-start: 50px;
+    padding: 30px;
+    background: rgba(79, 195, 247, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(79, 195, 247, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.contacto-servicios p {
+    color: #fff;
+    margin-block-end: 20px;
+    font-size: 1.1rem;
+}
+
+.contacto-servicios strong {
+    color: #4fc3f7;
+}
+
+.btn-email, .btn-instagram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 25px;
+    margin: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-inline-size: 250px;
+    max-inline-size: 100%;
+}
+
+.btn-email {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.btn-instagram {
+    background: linear-gradient(135deg, #405de6, #833ab4, #fd1d1d);
+    color: white;
+}
+
+.btn-email:hover, .btn-instagram:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.instagram-contacto {
+    margin-block-start: 25px;
+}
+
+/* MEDIA QUERIES - RESPONSIVE */
+
+/* Tablet: 768px en adelante */
+@media (min-width: 768px) {
+    #produccion {
+        padding: 60px 30px;
+    }
+    
+    #produccion .title {
+        font-size: 2.5rem;
+    }
+    
+    .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .servicio-card.popular {
+        transform: scale(1.05);
+    }
+    
+    .servicio-card.popular:hover {
+        transform: scale(1.05) translateY(-10px);
+    }
+    
+    .plazos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .proceso-steps {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px;
+    }
+    
+    .step {
+        padding: 25px 20px 25px 60px;
+        min-block-size: 180px;
+    }
+    
+    .step::before {
+        inset-inline-start: 50%;
+        inset-block-start: 20px;
+        transform: translateX(-50%);
+    }
+}
+
+/* Deskinset-block-start: 1024px en adelante */
+@media (min-width: 1024px) {
+    #produccion {
+        padding: 80px 50px;
+    }
+    
+    #produccion .title {
+        font-size: 3rem;
+        margin-block-end: 60px;
+    }
+    
+    .servicios-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+    }
+    
+    .produccion-intro {
+        margin-block-end: 60px;
+    }
+    
+    .intro-text {
+        font-size: 1.2rem;
+        line-height: 1.7;
+    }
+    
+    .paquetes-container .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .plazo-item {
+        padding: 30px;
+    }
+    
+    .proceso-steps {
+        gap: 20px;
+    }
+    
+    .contacto-servicios {
+        padding: 40px;
+    }
+    
+    .btn-email, .btn-instagram {
+        min-inline-size: 280px;
+        padding: 16px 30px;
+    }
+}
+
+/* Desktop grande: 1440px en adelante */
+@media (min-width: 1440px) {
+    .servicios-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-inline-size: 1300px;
+        margin-inline-start: auto;
+        margin-inline-end: auto;
+    }
+    
+    .paquetes-container .servicios-grid {
+        max-inline-size: 1000px;
+        margin-inline-start: auto;
+        margin-inline-end: auto;
+    }
+}
+
+/* Para pantallas muy pequeas (iPhone SE) */
+@media (max-width: 374px) {
+    .servicio-card {
+        padding: 20px 15px;
+    }
+    
+    .servicio-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .servicio-precio {
+        font-size: 1.5rem;
+    }
+    
+    .servicio-lista li {
+        font-size: 0.9rem;
+    }
+    
+    .btn-servicio {
+        padding: 14px;
+        font-size: 1rem;
+    }
+    
+    .plazo-item {
+        padding: 15px;
+    }
+    
+    .step {
+        padding: 20px 15px 20px 50px;
+    }
+    
+    .step::before {
+        inline-size: 35px;
+        block-size: 35px;
+        font-size: 1rem;
+    }
+    
+    .btn-email, .btn-instagram {
+        min-inline-size: 200px;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Orientacin landscape en mviles */
+@media (max-width: 900px) and (orientation: landscape) {
+    .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .plazos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .proceso-steps {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .servicio-card,
+    .btn-servicio,
+    .plazo-item,
+    .step {
+        transition: none;
+    }
+    
+    .servicio-icon {
+        animation: none;
+    }
+    
+    .btn-servicio::before {
+        display: none;
+    }
+}
+
+/* Modo oscuro (ajustes adicionales) */
+@media (prefers-color-scheme: dark) {
+    .servicio-card {
+        background: rgba(15, 15, 15, 0.9);
+    }
+    
+    .plazo-item {
+        background: rgba(25, 25, 25, 0.8);
+    }
+    
+    .step {
+        background: rgba(20, 20, 20, 0.8);
+    }
+}
+
+/* Asegurar contraste para lectura */
+.servicio-lista li,
+.step p,
+.intro-text {
+    color: #e0e0e0;
+}
+
+/* Mejorar focus para navegacin con teclado */
+.btn-servicio:focus,
+.btn-email:focus,
+.btn-instagram:focus {
+    outline: 3px solid #4fc3f7;
+    outline-offset: 3px;
+}
+
+/* Corregir problemas de overflow en mviles */
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#produccion {
+    overflow-x: hidden;
+}
+
